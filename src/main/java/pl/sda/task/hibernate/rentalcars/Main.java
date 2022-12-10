@@ -1,9 +1,6 @@
 package pl.sda.task.hibernate.rentalcars;
 
-import pl.sda.task.hibernate.rentalcars.commands.Komenda;
-import pl.sda.task.hibernate.rentalcars.commands.KomendaAddCar;
-import pl.sda.task.hibernate.rentalcars.commands.KomendaAktualizujSamochod;
-import pl.sda.task.hibernate.rentalcars.commands.KomendaListaSamochod;
+import pl.sda.task.hibernate.rentalcars.commands.*;
 
 import java.util.List;
 
@@ -12,7 +9,8 @@ public class Main {
     List<Komenda> listaKomend = List.of(
             new KomendaAddCar(),
             new KomendaListaSamochod(),
-            new KomendaAktualizujSamochod()
+            new KomendaAktualizujSamochod(),
+            new KomendaUsunSamochod()
     );
 
         System.out.println("Lista dostepnych komend:");
