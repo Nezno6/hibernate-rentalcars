@@ -11,7 +11,8 @@ public class Main {
             new KomendaListaSamochod(),
             new KomendaAktualizujSamochod(),
             new KomendaUsunSamochod(),
-            new KomendaDodajKlient()
+            new KomendaDodajKlient(),
+            new KomendaListaKlient()
     );
 
         System.out.println("Lista dostepnych komend:");
