@@ -84,12 +84,12 @@ public class DataAccessObject<T> {
             T encja = session.get(tClass, id);
 
             if (encja == null) {
-                return false;
+                return true;
             }
         } catch (Exception e) {
             System.err.println("Blad bazy" + e);
         }
-        return true;
+        return false;
     }
 
 }
