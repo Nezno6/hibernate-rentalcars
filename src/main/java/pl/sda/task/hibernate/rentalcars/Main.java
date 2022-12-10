@@ -2,13 +2,15 @@ package pl.sda.task.hibernate.rentalcars;
 
 import pl.sda.task.hibernate.rentalcars.commands.Komenda;
 import pl.sda.task.hibernate.rentalcars.commands.KomendaAddCar;
+import pl.sda.task.hibernate.rentalcars.commands.KomendaListaSamochod;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
     List<Komenda> listaKomend = List.of(
-            new KomendaAddCar()
+            new KomendaAddCar(),
+            new KomendaListaSamochod()
     );
         System.out.println("Lista dostepnych komend:");
         listaKomend.forEach(komenda -> System.out.println(komenda.getKomenda()));
