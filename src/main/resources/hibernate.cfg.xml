@@ -15,8 +15,6 @@
 
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="pl.sda.j133.hibernate.warsztat.model."/>
-        <mapping class="pl.sda.j133.hibernate.warsztat.model."/>
-        <mapping class="pl.sda.j133.hibernate.warsztat.model."/>
+        <mapping class="pl.sda.task.hibernate.rentalcars.model.Samochod"/>
     </session-factory>
 </hibernate-configuration>
