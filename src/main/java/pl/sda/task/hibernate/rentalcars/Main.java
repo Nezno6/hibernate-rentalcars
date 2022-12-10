@@ -10,7 +10,8 @@ public class Main {
             new KomendaAddCar(),
             new KomendaListaSamochod(),
             new KomendaAktualizujSamochod(),
-            new KomendaUsunSamochod()
+            new KomendaUsunSamochod(),
+            new KomendaDodajKlient()
     );
 
         System.out.println("Lista dostepnych komend:");
