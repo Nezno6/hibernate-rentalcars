@@ -31,10 +31,10 @@ public class KomendaAddCar implements Komenda {
 
         Samochod samochod = Samochod
                 .builder()
-                .nr_rej(nrRej)
+                .nrRej(nrRej)
                 .marka(marka)
                 .model(model)
-                .ilosc_miejsc(miejsca)
+                .iloscMiejsc(miejsca)
                 .build();
 
         dataAccessObject.insert(samochod);

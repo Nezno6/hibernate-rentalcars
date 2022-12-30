@@ -41,10 +41,10 @@ public class KomendaAktualizujSamochod implements Komenda{
         Samochod samochod = Samochod
                 .builder()
                 .id(id)
-                .nr_rej(nrRej)
+                .nrRej(nrRej)
                 .marka(marka)
                 .model(model)
-                .ilosc_miejsc(miejsca)
+                .iloscMiejsc(miejsca)
                 .build();
 
         dataAccessObject.update(Samochod.class, id, samochod);
