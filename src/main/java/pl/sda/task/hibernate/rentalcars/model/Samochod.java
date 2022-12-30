@@ -13,8 +13,11 @@ public class Samochod {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT
         private Long id;
-        private String nr_rej;
+        private String nrRej;
         private String marka;
         private String model;
-        private int ilosc_miejsc;
+        private int iloscMiejsc;
+
+        @OneToMany(mappedBy = "samochod")
+        private Set<Wypozyczenie> wypozyczenia;
 }

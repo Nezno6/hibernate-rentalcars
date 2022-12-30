@@ -17,6 +17,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="pl.sda.task.hibernate.rentalcars.model.Samochod"/>
         <mapping class="pl.sda.task.hibernate.rentalcars.model.Klient"/>
+        <mapping class="pl.sda.task.hibernate.rentalcars.model.Wypozyczenie"/>
 
     </session-factory>
 </hibernate-configuration>
