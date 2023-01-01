@@ -17,7 +17,8 @@ public class Main {
             new KomendaUsunKlient(),
             new KomendaDodajWypozyczenie(),
             new KomendaListaWypozyczenie(),
-            new KomendaUsunWypozyczenie()
+            new KomendaUsunWypozyczenie(),
+            new KomendaAktualizujWypozyczenie()
     );
 
         System.out.println("Lista dostepnych komend:");
