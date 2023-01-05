@@ -30,4 +30,9 @@ public class Wypozyczenie {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Klient klient;
+
+    @OneToOne(mappedBy = "wypozyczenie")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Zwrot zwrot;
 }
