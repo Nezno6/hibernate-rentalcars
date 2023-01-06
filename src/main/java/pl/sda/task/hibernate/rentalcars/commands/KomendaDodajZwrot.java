@@ -1,15 +1,13 @@
 package pl.sda.task.hibernate.rentalcars.commands;
 
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
-import pl.sda.task.hibernate.rentalcars.model.Klient;
-import pl.sda.task.hibernate.rentalcars.model.Samochod;
 import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 import pl.sda.task.hibernate.rentalcars.model.Zwrot;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class KomendaDodajZwrot implements Komenda{
+public class KomendaDodajZwrot implements Komenda {
     private final DataAccessObject<Zwrot> dataAccessObjectZwrot;
     private final DataAccessObject<Wypozyczenie> dataAccessObjectWypozyczenie;
 
@@ -39,12 +37,7 @@ public class KomendaDodajZwrot implements Komenda{
         System.out.println("Wprowadz tresc notatki: ");
         String notatka = Komenda.scanner.nextLine();
 
-        Zwrot zwrot = Zwrot
-                .builder()
-                .dataZwrotu(LocalDateTime.now())
-                .notatka(notatka)
-                .wypozyczenie(wypozyczenieOptional.get())
-                .build();
+        Zwrot zwrot = Zwrot.builder().dataZwrotu(LocalDateTime.now()).notatka(notatka).wypozyczenie(wypozyczenieOptional.get()).build();
 
         dataAccessObjectZwrot.insert(zwrot);
         System.out.println("Dodano zwrot");

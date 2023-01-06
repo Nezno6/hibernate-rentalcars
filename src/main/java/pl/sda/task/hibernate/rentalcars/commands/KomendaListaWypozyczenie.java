@@ -1,12 +1,11 @@
 package pl.sda.task.hibernate.rentalcars.commands;
 
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
-import pl.sda.task.hibernate.rentalcars.model.Samochod;
 import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 
 import java.util.List;
 
-public class KomendaListaWypozyczenie implements Komenda{
+public class KomendaListaWypozyczenie implements Komenda {
     private final DataAccessObject<Wypozyczenie> dataAccessObject;
 
     public KomendaListaWypozyczenie() {

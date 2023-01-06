@@ -5,7 +5,7 @@ import pl.sda.task.hibernate.rentalcars.model.Klient;
 
 import java.util.List;
 
-public class KomendaListaKlient implements Komenda{
+public class KomendaListaKlient implements Komenda {
     private final DataAccessObject<Klient> dataAccessObject;
 
     public KomendaListaKlient() {

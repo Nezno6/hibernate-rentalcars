@@ -3,7 +3,7 @@ package pl.sda.task.hibernate.rentalcars.commands;
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
 import pl.sda.task.hibernate.rentalcars.model.Klient;
 
-public class KomendaAktualizujKlient implements Komenda{
+public class KomendaAktualizujKlient implements Komenda {
     private final DataAccessObject<Klient> dataAccessObject;
 
     public KomendaAktualizujKlient() {
@@ -35,13 +35,7 @@ public class KomendaAktualizujKlient implements Komenda{
         System.out.println("Podaj nip klienta");
         String nip = Komenda.scanner.nextLine();
 
-        Klient klient = Klient
-                .builder()
-                .id(id)
-                .imie(imie)
-                .nazwisko(nazwisko)
-                .nip(nip)
-                .build();
+        Klient klient = Klient.builder().id(id).imie(imie).nazwisko(nazwisko).nip(nip).build();
 
         dataAccessObject.update(Klient.class, id, klient);
     }

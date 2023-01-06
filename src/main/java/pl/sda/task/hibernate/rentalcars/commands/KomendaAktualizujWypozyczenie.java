@@ -8,7 +8,7 @@ import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class KomendaAktualizujWypozyczenie implements Komenda{
+public class KomendaAktualizujWypozyczenie implements Komenda {
 
     private final DataAccessObject<Wypozyczenie> dataAccessObjectWypozyczenie;
     private final DataAccessObject<Klient> dataAccessObjectKlient;
@@ -58,29 +58,20 @@ public class KomendaAktualizujWypozyczenie implements Komenda{
 
         System.out.println("Podaj ilosc dni wypozyczenia:");
         String iloscDniWypozyczenia = Komenda.scanner.nextLine();
-        LocalDateTime dataKoncaWypozyczenia = LocalDateTime.from(LocalDateTime.now())
-                .plusDays(Integer.parseInt(iloscDniWypozyczenia));
+        LocalDateTime dataKoncaWypozyczenia = LocalDateTime.from(LocalDateTime.now()).plusDays(Integer.parseInt(iloscDniWypozyczenia));
 
         double stawkaGodzinowa = 8.50;
         System.out.println("Czy chcesz zmienic stawke godzinowa (T/N): ");
         System.out.println("Aktualna stawka godzinowa w zlotych: " + stawkaGodzinowa);
         String odpStawkaGodzinowa = Komenda.scanner.nextLine();
-        if (odpStawkaGodzinowa.equalsIgnoreCase("t")){
+        if (odpStawkaGodzinowa.equalsIgnoreCase("t")) {
             System.out.println("Podaj aktualna stawke godzinowa: ");
             String newStawkaGodzinowa = Komenda.scanner.nextLine();
             stawkaGodzinowa = Double.parseDouble(newStawkaGodzinowa);
-            System.out.println("Nowa stawka godzinowa to " + newStawkaGodzinowa );
+            System.out.println("Nowa stawka godzinowa to " + newStawkaGodzinowa);
         }
 
-        Wypozyczenie wypozyczenie = Wypozyczenie
-                .builder()
-                .id(idWypozyczenia)
-                .dataWypozyczenia(dataAccessObjectWypozyczenie.find(Wypozyczenie.class, idWypozyczenia).get().getDataWypozyczenia())
-                .dataKoncaWypozyczenia(dataKoncaWypozyczenia)
-                .cenaWynajecia(Integer.parseInt(iloscDniWypozyczenia) * stawkaGodzinowa)
-                .samochod(samochodOptional.get())
-                .klient(klientOptional.get())
-                .build();
+        Wypozyczenie wypozyczenie = Wypozyczenie.builder().id(idWypozyczenia).dataWypozyczenia(dataAccessObjectWypozyczenie.find(Wypozyczenie.class, idWypozyczenia).get().getDataWypozyczenia()).dataKoncaWypozyczenia(dataKoncaWypozyczenia).cenaWynajecia(Integer.parseInt(iloscDniWypozyczenia) * stawkaGodzinowa).samochod(samochodOptional.get()).klient(klientOptional.get()).build();
 
         dataAccessObjectWypozyczenie.update(Wypozyczenie.class, idWypozyczenia, wypozyczenie);
     }

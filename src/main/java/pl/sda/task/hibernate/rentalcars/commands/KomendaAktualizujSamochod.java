@@ -3,7 +3,7 @@ package pl.sda.task.hibernate.rentalcars.commands;
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
 import pl.sda.task.hibernate.rentalcars.model.Samochod;
 
-public class KomendaAktualizujSamochod implements Komenda{
+public class KomendaAktualizujSamochod implements Komenda {
     private final DataAccessObject<Samochod> dataAccessObject;
 
     public KomendaAktualizujSamochod() {
@@ -38,14 +38,7 @@ public class KomendaAktualizujSamochod implements Komenda{
         System.out.println("Podaj ilosc miejsc pojazdu");
         int miejsca = Integer.parseInt(Komenda.scanner.nextLine());
 
-        Samochod samochod = Samochod
-                .builder()
-                .id(id)
-                .nrRej(nrRej)
-                .marka(marka)
-                .model(model)
-                .iloscMiejsc(miejsca)
-                .build();
+        Samochod samochod = Samochod.builder().id(id).nrRej(nrRej).marka(marka).model(model).iloscMiejsc(miejsca).build();
 
         dataAccessObject.update(Samochod.class, id, samochod);
     }

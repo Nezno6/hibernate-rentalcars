@@ -3,7 +3,7 @@ package pl.sda.task.hibernate.rentalcars.commands;
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
 import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 
-public class KomendaUsunWypozyczenie implements Komenda{
+public class KomendaUsunWypozyczenie implements Komenda {
     private final DataAccessObject<Wypozyczenie> dataAccessObject;
 
     public KomendaUsunWypozyczenie() {
