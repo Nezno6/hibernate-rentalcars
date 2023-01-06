@@ -20,7 +20,8 @@ public class Main {
             new KomendaUsunWypozyczenie(),
             new KomendaAktualizujWypozyczenie(),
             new KomendaDodajZwrot(),
-            new KomendaListaZwrot()
+            new KomendaListaZwrot(),
+            new KomendaAktualizujZwrot()
     );
 
         System.out.println("Lista dostepnych komend:");
