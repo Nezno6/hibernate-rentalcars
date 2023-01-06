@@ -31,9 +31,7 @@ public class HibernateUtil {
     private SessionFactory loadConfigFile() {
         // Załaduj plik konfiguracyjny: hibernate.cfg.xml
         // (jeśli nie podam nazwy pliku to załaduje plik hibernate.cfg.xml - domyślna nazwe plik, można podać inną nazwe)
-        StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
-                .configure("hibernate.cfg.xml")
-                .build();
+        StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
 
         // Metadane to dane które opisują dane
         Metadata metadata = new MetadataSources(standardServiceRegistry).getMetadataBuilder().build();

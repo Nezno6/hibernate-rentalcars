@@ -3,7 +3,7 @@ package pl.sda.task.hibernate.rentalcars.commands;
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
 import pl.sda.task.hibernate.rentalcars.model.Samochod;
 
-public class KomendaUsunSamochod implements Komenda{
+public class KomendaUsunSamochod implements Komenda {
     private final DataAccessObject<Samochod> dataAccessObject;
 
     public KomendaUsunSamochod() {

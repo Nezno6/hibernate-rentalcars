@@ -1,10 +1,9 @@
 package pl.sda.task.hibernate.rentalcars.commands;
 
 import pl.sda.task.hibernate.rentalcars.database.DataAccessObject;
-import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 import pl.sda.task.hibernate.rentalcars.model.Zwrot;
 
-public class KomendaUsunZwrot implements Komenda{
+public class KomendaUsunZwrot implements Komenda {
     private final DataAccessObject<Zwrot> dataAccessObject;
 
     public KomendaUsunZwrot() {

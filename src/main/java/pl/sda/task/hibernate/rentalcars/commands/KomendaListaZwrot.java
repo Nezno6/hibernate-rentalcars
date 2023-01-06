@@ -5,7 +5,7 @@ import pl.sda.task.hibernate.rentalcars.model.Zwrot;
 
 import java.util.List;
 
-public class KomendaListaZwrot implements Komenda{
+public class KomendaListaZwrot implements Komenda {
     private final DataAccessObject<Zwrot> dataAccessObject;
 
     public KomendaListaZwrot() {

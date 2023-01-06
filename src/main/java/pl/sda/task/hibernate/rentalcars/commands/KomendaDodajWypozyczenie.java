@@ -8,7 +8,7 @@ import pl.sda.task.hibernate.rentalcars.model.Wypozyczenie;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class KomendaDodajWypozyczenie implements Komenda{
+public class KomendaDodajWypozyczenie implements Komenda {
     private final DataAccessObject<Samochod> dataAccessObjectSamochod;
     private final DataAccessObject<Klient> dataAccessObjectKlient;
     private final DataAccessObject<Wypozyczenie> dataAccessObjectWypozyczenie;
@@ -49,28 +49,20 @@ public class KomendaDodajWypozyczenie implements Komenda{
 
         System.out.println("Podaj ilosc dni wypozyczenia:");
         String iloscDniWypozyczenia = Komenda.scanner.nextLine();
-        LocalDateTime dataKoncaWypozyczenia = LocalDateTime.from(LocalDateTime.now())
-                .plusDays(Integer.parseInt(iloscDniWypozyczenia));
+        LocalDateTime dataKoncaWypozyczenia = LocalDateTime.from(LocalDateTime.now()).plusDays(Integer.parseInt(iloscDniWypozyczenia));
 
         double stawkaGodzinowa = 8.50;
         System.out.println("Czy chcesz zmienic stawke godzinowa (T/N): ");
         System.out.println("Aktualna stawka godzinowa w zlotych: " + stawkaGodzinowa);
         String odpStawkaGodzinowa = Komenda.scanner.nextLine();
-        if (odpStawkaGodzinowa.equalsIgnoreCase("t")){
+        if (odpStawkaGodzinowa.equalsIgnoreCase("t")) {
             System.out.println("Podaj aktualna stawke godzinowa: ");
             String newStawkaGodzinowa = Komenda.scanner.nextLine();
             stawkaGodzinowa = Double.parseDouble(newStawkaGodzinowa);
-            System.out.println("Nowa stawka godzinowa to " + newStawkaGodzinowa );
+            System.out.println("Nowa stawka godzinowa to " + newStawkaGodzinowa);
         }
 
-        Wypozyczenie wypozyczenie = Wypozyczenie
-                .builder()
-                .dataWypozyczenia(LocalDateTime.now())
-                .dataKoncaWypozyczenia(dataKoncaWypozyczenia)
-                .cenaWynajecia(Integer.parseInt(iloscDniWypozyczenia) * stawkaGodzinowa)
-                .samochod(samochodOptional.get())
-                .klient(klientOptional.get())
-                .build();
+        Wypozyczenie wypozyczenie = Wypozyczenie.builder().dataWypozyczenia(LocalDateTime.now()).dataKoncaWypozyczenia(dataKoncaWypozyczenia).cenaWynajecia(Integer.parseInt(iloscDniWypozyczenia) * stawkaGodzinowa).samochod(samochodOptional.get()).klient(klientOptional.get()).build();
 
         dataAccessObjectWypozyczenie.insert(wypozyczenie);
         System.out.println("Dodano wypozyczenie");

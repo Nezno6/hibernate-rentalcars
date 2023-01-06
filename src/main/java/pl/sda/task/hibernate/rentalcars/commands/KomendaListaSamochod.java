@@ -5,7 +5,7 @@ import pl.sda.task.hibernate.rentalcars.model.Samochod;
 
 import java.util.List;
 
-public class KomendaListaSamochod implements Komenda{
+public class KomendaListaSamochod implements Komenda {
     private final DataAccessObject<Samochod> dataAccessObject;
 
     public KomendaListaSamochod() {
