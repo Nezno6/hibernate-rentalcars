@@ -21,7 +21,8 @@ public class Main {
             new KomendaAktualizujWypozyczenie(),
             new KomendaDodajZwrot(),
             new KomendaListaZwrot(),
-            new KomendaAktualizujZwrot()
+            new KomendaAktualizujZwrot(),
+            new KomendaUsunZwrot()
     );
 
         System.out.println("Lista dostepnych komend:");
