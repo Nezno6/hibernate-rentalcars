@@ -19,7 +19,12 @@ public class Klient {
     private Long id;
     private String imie;
     private String nazwisko;
+
+    @Column(unique=true)
     private String nip;
+    private String telefon;
+    private String email;
+
 
     @OneToMany(mappedBy = "klient")
     private Set<Wypozyczenie> wypozyczenia;

@@ -20,6 +20,7 @@ public class Zwrot {
     private Long id;
 
     @CreationTimestamp
+    @Column(name = "data_czas_zwrotu")
     private LocalDateTime dataZwrotu;
     private String notatka;
 
