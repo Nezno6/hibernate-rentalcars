@@ -5,12 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 
 import java.util.Set;
 
 @Data
 @Entity
 @Builder
+@Table(name = "samochod")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Samochod {

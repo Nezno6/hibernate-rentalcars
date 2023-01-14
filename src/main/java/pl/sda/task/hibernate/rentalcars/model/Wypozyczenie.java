@@ -2,13 +2,16 @@ package pl.sda.task.hibernate.rentalcars.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.Session;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
+@Table(name = "wypozyczenie")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,7 +30,7 @@ public class Wypozyczenie {
     private LocalDateTime godzinaWypozyczenia;
     @Column(name = "godzina_koncowa_wypozyczenia")
     private LocalDateTime godzinaKoncaWypozyczenia;
-    @Formula(value = "(select s.stawka_godzinowa_wypozyczenia from samochod s where s.id = id)")
+    @Formula("(select samochod.stawka_godzinowa_wypozyczenia from samochod where samochod.id : samochod_id)")
     private double cenaWynajecia;
 
     @ManyToOne

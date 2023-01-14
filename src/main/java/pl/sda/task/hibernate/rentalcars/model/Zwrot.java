@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Builder
+@Table(name = "zwrot")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Zwrot {
