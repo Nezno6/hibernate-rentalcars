@@ -35,7 +35,13 @@ public class KomendaAktualizujKlient implements Komenda {
         System.out.println("Podaj nip klienta");
         String nip = Komenda.scanner.nextLine();
 
-        Klient klient = Klient.builder().id(id).imie(imie).nazwisko(nazwisko).nip(nip).build();
+        System.out.println("Podaj email klienta");
+        String email = Komenda.scanner.nextLine();
+
+        System.out.println("Podaj telefon klienta");
+        String telefon = Komenda.scanner.nextLine();
+
+        Klient klient = Klient.builder().id(id).imie(imie).nazwisko(nazwisko).nip(nip).email(email).telefon(telefon).build();
 
         dataAccessObject.update(Klient.class, id, klient);
     }

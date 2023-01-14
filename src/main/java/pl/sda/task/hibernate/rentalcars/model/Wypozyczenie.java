@@ -30,7 +30,7 @@ public class Wypozyczenie {
     private LocalDateTime godzinaWypozyczenia;
     @Column(name = "godzina_koncowa_wypozyczenia")
     private LocalDateTime godzinaKoncaWypozyczenia;
-    @Formula("(select samochod.stawka_godzinowa_wypozyczenia from samochod where samochod.id : samochod_id)")
+    @Formula("(select samochod.stawka_godzinowa_wypozyczenia from samochod where samochod.id = samochod_id)")
     private double cenaWynajecia;
 
     @ManyToOne
