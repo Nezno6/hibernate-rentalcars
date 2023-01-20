@@ -26,7 +26,7 @@ public class Wypozyczenie {
     @Column(name = "data_koncowa_wypozyczenia")
     private LocalDateTime dataKoncaWypozyczenia;
     @CreationTimestamp
-    @Column(name = "godzima_wypozyczenia")
+    @Column(name = "godzina_wypozyczenia")
     private LocalDateTime godzinaWypozyczenia;
     @Column(name = "godzina_koncowa_wypozyczenia")
     private LocalDateTime godzinaKoncaWypozyczenia;
