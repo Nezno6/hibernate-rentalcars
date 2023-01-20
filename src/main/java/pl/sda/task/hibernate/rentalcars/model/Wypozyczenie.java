@@ -6,7 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Data
@@ -22,14 +24,14 @@ public class Wypozyczenie {
 
     @CreationTimestamp
     @Column(name = "data_wypozyczenia")
-    private LocalDateTime dataWypozyczenia;
+    private LocalDate dataWypozyczenia;
     @Column(name = "data_koncowa_wypozyczenia")
-    private LocalDateTime dataKoncaWypozyczenia;
+    private LocalDate dataKoncaWypozyczenia;
     @CreationTimestamp
     @Column(name = "godzina_wypozyczenia")
-    private LocalDateTime godzinaWypozyczenia;
+    private LocalTime godzinaWypozyczenia;
     @Column(name = "godzina_koncowa_wypozyczenia")
-    private LocalDateTime godzinaKoncaWypozyczenia;
+    private LocalTime godzinaKoncaWypozyczenia;
     @Formula("(select samochod.stawka_godzinowa_wypozyczenia from samochod where samochod.id = samochod_id)")
     private double cenaWynajecia;
 
