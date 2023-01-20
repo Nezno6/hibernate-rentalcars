@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Data
 @Entity
@@ -21,8 +23,10 @@ public class Zwrot {
     private Long id;
 
     @CreationTimestamp
-    @Column(name = "data_czas_zwrotu")
-    private LocalDateTime dataZwrotu;
+    @Column(name = "data_zwrotu")
+    private LocalDate dataZwrotu;
+    @Column(name = "godzina_zwrotu")
+    private LocalTime godzinaZwrotu;
     private String notatka;
 
     @OneToOne
